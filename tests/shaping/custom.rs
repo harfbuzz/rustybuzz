@@ -29,6 +29,18 @@ fn bugs_002() {
 }
 
 #[test]
+fn bugs_003() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/NotoSansMalayalam.subset1.ttf",
+            "\u{0D38}\u{0D4D}\u{0D25}",
+            "",
+        ),
+        "gid7=0+1891"
+    );
+}
+
+#[test]
 fn fuzzer_001() {
     assert_eq!(
         shape(
