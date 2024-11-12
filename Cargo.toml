@@ -1,7 +1,12 @@
 [package]
 name = "rustybuzz"
 version = "0.20.0"
-authors = ["Yevhenii Reizner <razrfalcon@gmail.com>"]
+authors = [
+    "Caleb Maclennan <caleb@alerque.com>",
+    "Laurenz Stampfl <laurenz.stampfl@gmail.com>",
+    "Yevhenii Reizner <razrfalcon@gmail.com>",
+    "خالد حسني (Khaled Hosny) <khaled@aliftype.com>"
+]
 edition = "2021"
 description = "A complete harfbuzz shaping algorithm port to Rust."
 documentation = "https://docs.rs/rustybuzz/"
