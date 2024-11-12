@@ -1,6 +1,6 @@
 [package]
 name = "rustybuzz"
-version = "0.20.0"
+version = "0.20.1"
 authors = [
     "Caleb Maclennan <caleb@alerque.com>",
     "Laurenz Stampfl <laurenz.stampfl@gmail.com>",
