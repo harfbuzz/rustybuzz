@@ -1,9 +1,13 @@
 #![feature(test)]
 #![allow(dead_code)]
 #![allow(unused_imports)]
+#![feature(custom_test_frameworks)]
+#![test_runner(criterion::runner)]
 
 extern crate test;
 
+use criterion::{black_box, Criterion};
+use criterion_macro::criterion;
 use rustybuzz::ttf_parser::Tag;
 
 struct CustomVariation {
@@ -29,34 +33,34 @@ macro_rules! simple_bench {
             use super::*;
             use test::Bencher;
 
-            #[bench]
-            fn rb(bencher: &mut Bencher) {
+            #[criterion]
+            fn rb(c: &mut Criterion) {
                 let font_data = std::fs::read($font_path).unwrap();
                 let text = std::fs::read_to_string($text_path).unwrap().trim().to_string();
-                bencher.iter(|| {
-                    test::black_box({
-                        let face = rustybuzz::Face::from_slice(&font_data, 0).unwrap();
-                        let mut buffer = rustybuzz::UnicodeBuffer::new();
-                        buffer.push_str(&text);
-                        buffer.reset_clusters();
-                        rustybuzz::shape(&face, &[], buffer);
-                    });
-                })
-            }
 
-            #[cfg(feature = "hb")]
-            #[bench]
-            fn hb(bencher: &mut Bencher) {
-                let font_data = std::fs::read($font_path).unwrap();
-                let text = std::fs::read_to_string($text_path).unwrap().trim().to_string();
-                bencher.iter(|| {
-                    test::black_box({
-                        let face = harfbuzz_rs::Face::from_bytes(&font_data, 0);
-                        let font = harfbuzz_rs::Font::new(face);
+                c.bench_function(&format!("{}::{}", module_path!(), "rb"), |bencher| {
+                    let face = rustybuzz::Face::from_slice(&font_data, 0).unwrap();
+
+                    bencher.iter(|| {
+                        black_box({
+                            let mut buffer = rustybuzz::UnicodeBuffer::new();
+                            buffer.push_str(&text);
+                            buffer.reset_clusters();
+                            rustybuzz::shape(&face, &[], buffer);
+                        });
+                    })
+                });
+
+                #[cfg(feature = "hb")]
+                c.bench_function(&format!("{}::{}", module_path!(), "hb"), |bencher| {
+                    let face = harfbuzz_rs::Face::from_bytes(&font_data, 0);
+                    let font = harfbuzz_rs::Font::new(face);
+
+                    bencher.iter(|| {
                         let buffer = harfbuzz_rs::UnicodeBuffer::new().add_str(&text);
-                        harfbuzz_rs::shape(&font, buffer, &[])
-                    });
-                })
+                        black_box({ harfbuzz_rs::shape(&font, buffer, &[]) });
+                    })
+                });
             }
         }
     };
@@ -67,36 +71,35 @@ macro_rules! simple_bench {
             use super::*;
             use test::Bencher;
 
-            #[bench]
-            fn rb(bencher: &mut Bencher) {
+            #[criterion]
+            fn rb(c: &mut Criterion) {
                 let font_data = std::fs::read($font_path).unwrap();
                 let text = std::fs::read_to_string($text_path).unwrap().trim().to_string();
-                bencher.iter(|| {
-                    test::black_box({
-                        let mut face = rustybuzz::Face::from_slice(&font_data, 0).unwrap();
-                        face.set_variations($variations);
-                        let mut buffer = rustybuzz::UnicodeBuffer::new();
-                        buffer.push_str(&text);
-                        buffer.reset_clusters();
-                        rustybuzz::shape(&face, &[], buffer);
-                    });
-                })
-            }
+                c.bench_function(&format!("{}::{}", module_path!(), "rb"), |bencher| {
+                    let mut face = rustybuzz::Face::from_slice(&font_data, 0).unwrap();
+                    face.set_variations($variations);
 
-            #[cfg(feature = "hb")]
-            #[bench]
-            fn hb(bencher: &mut Bencher) {
-                let font_data = std::fs::read($font_path).unwrap();
-                let text = std::fs::read_to_string($text_path).unwrap().trim().to_string();
-                bencher.iter(|| {
-                    test::black_box({
-                        let face = harfbuzz_rs::Face::from_bytes(&font_data, 0);
-                        let mut font = harfbuzz_rs::Font::new(face);
-                        font.set_variations($variations);
+                    bencher.iter(|| {
+                        black_box({
+                            let mut buffer = rustybuzz::UnicodeBuffer::new();
+                            buffer.push_str(&text);
+                            buffer.reset_clusters();
+                            rustybuzz::shape(&face, &[], buffer);
+                        });
+                    })
+                });
+
+                #[cfg(feature = "hb")]
+                c.bench_function(&format!("{}::{}", module_path!(), "hb"), |bencher| {
+                    let face = harfbuzz_rs::Face::from_bytes(&font_data, 0);
+                    let mut font = harfbuzz_rs::Font::new(face);
+                    font.set_variations($variations);
+
+                    bencher.iter(|| {
                         let buffer = harfbuzz_rs::UnicodeBuffer::new().add_str(&text);
-                        harfbuzz_rs::shape(&font, buffer, &[])
-                    });
-                })
+                        black_box({ harfbuzz_rs::shape(&font, buffer, &[]) });
+                    })
+                });
             }
         }
     };
