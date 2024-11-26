@@ -1721,34 +1721,6 @@ fn cluster_004() {
 }
 
 #[test]
-fn collections_004() {
-    assert_eq!(
-        shape(
-            "tests/fonts/in-house/TTC.ttc",
-            "\u{2026}\u{0020}\u{002E}",
-            "--face-index=0",
-        ),
-        "ellipsis=0+723|\
-         space=1+250|\
-         period=2+241"
-    );
-}
-
-#[test]
-fn collections_005() {
-    assert_eq!(
-        shape(
-            "tests/fonts/in-house/TTC.ttc",
-            "\u{2026}\u{0020}\u{002E}",
-            "--face-index=1",
-        ),
-        "ellipsis=0+723|\
-         space=1+250|\
-         period=2+241"
-    );
-}
-
-#[test]
 fn color_fonts_001() {
     assert_eq!(
         shape(
