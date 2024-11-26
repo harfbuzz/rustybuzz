@@ -335,49 +335,54 @@ class OpenTypeRegistryParser(HTMLParser):
         self.from_bcp_47_uninherited = None
         # Whether the parser is in a <td> element
         self._td = False
-        # Whether the parser is after a <br> element within the current <tr> element
-        self._br = False
+        # Whether the parser ignores the rest of the current <td> element
+        self._disengaged = False
         # The text of the <td> elements of the current <tr> element.
         self._current_tr = []
 
-    def handle_starttag(self, tag, attrs):
-        if tag == 'br':
-            self._br = True
+    def handle_starttag (self, tag, attrs):
+        if tag == 'a':
+            if self._current_tr and not self._disengaged:
+                self._current_tr[-1] = ''
+                self._disengaged = True
+        elif tag == 'br':
+            self._disengaged = True
         elif tag == 'meta':
             for attr, value in attrs:
                 if attr == 'name' and value == 'updated_at':
-                    self.header = self.get_starttag_text()
+                    self.header = self.get_starttag_text ()
                     break
         elif tag == 'td':
             self._td = True
-            self._current_tr.append('')
+            self._current_tr.append ('')
         elif tag == 'tr':
-            self._br = False
+            self._disengaged = False
             self._current_tr = []
 
-    def handle_endtag(self, tag):
+    def handle_endtag (self, tag):
         if tag == 'td':
             self._td = False
+            self._disengaged = False
         elif tag == 'tr' and self._current_tr:
-            expect(2 <= len(self._current_tr) <= 3)
-            name = self._current_tr[0].strip()
-            tag = self._current_tr[1].strip("\t\n\v\f\r '")
+            expect (2 <= len (self._current_tr) <= 3)
+            name = self._current_tr[0].strip ()
+            tag = self._current_tr[1].strip ("\t\n\v\f\r '")
             rank = 0
-            if len(tag) > 4:
-                expect(tag.endswith('(deprecated)'), 'ill-formed OpenType tag: %s' % tag)
-                name += '(deprecated)'
-                tag = tag.split(' ')[0]
+            if len (tag) > 4:
+                expect (tag.endswith (' (deprecated)'), 'ill-formed OpenType tag: %s' % tag)
+                name += ' (deprecated)'
+                tag = tag.split (' ')[0]
                 rank = 1
-            self.names[tag] = re.sub(' languages$', '', name)
+            self.names[tag] = re.sub (' languages$', '', name)
             if not self._current_tr[2]:
                 return
-            iso_codes = self._current_tr[2].strip()
-            self.to_bcp_47[tag].update(ISO_639_3_TO_1.get(code, code) for code in iso_codes.replace(' ', '').split(','))
-            rank += 2 * len(self.to_bcp_47[tag])
+            iso_codes = self._current_tr[2].strip ()
+            self.to_bcp_47[tag].update (ISO_639_3_TO_1.get (code, code) for code in iso_codes.replace (' ', '').split (','))
+            rank += 2 * len (self.to_bcp_47[tag])
             self.ranks[tag] = rank
 
-    def handle_data(self, data):
-        if self._td and not self._br:
+    def handle_data (self, data):
+        if self._td and not self._disengaged:
             self._current_tr[-1] += data
 
     def handle_charref(self, name):

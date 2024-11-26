@@ -384,7 +384,7 @@ pub const OPEN_TYPE_LANGUAGES: &[LangTag] = &[
     LangTag { language: "dgr", 	tag: Tag::from_bytes(b"ATH ") }, // Tlicho -> Athapaskan
     LangTag { language: "dhd", 	tag: Tag::from_bytes(b"MAW ") }, // Dhundari -> Marwari
 //  LangTag { language: "dhg", 	tag: Tag::from_bytes(b"DHG ") }, // Dhangu
-    LangTag { language: "dhv", 	tag: Tag(0)	            }, // Dehu != Divehi (Dhivehi, Maldivian)(deprecated)
+    LangTag { language: "dhv", 	tag: Tag(0)	            }, // Dehu != Divehi (Dhivehi, Maldivian) (deprecated)
     LangTag { language: "dib", 	tag: Tag::from_bytes(b"DNK ") }, // South Central Dinka -> Dinka
     LangTag { language: "dik", 	tag: Tag::from_bytes(b"DNK ") }, // Southwestern Dinka -> Dinka
     LangTag { language: "din", 	tag: Tag::from_bytes(b"DNK ") }, // Dinka [macrolanguage]
@@ -410,7 +410,7 @@ pub const OPEN_TYPE_LANGUAGES: &[LangTag] = &[
     LangTag { language: "dun", 	tag: Tag(0)	            }, // Dusun Deyah != Dungan
     LangTag { language: "dup", 	tag: Tag::from_bytes(b"MLY ") }, // Duano -> Malay
     LangTag { language: "dv", 	tag: Tag::from_bytes(b"DIV ") }, // Divehi (Dhivehi, Maldivian)
-    LangTag { language: "dv", 	tag: Tag::from_bytes(b"DHV ") }, // Divehi (Dhivehi, Maldivian)(deprecated)
+    LangTag { language: "dv", 	tag: Tag::from_bytes(b"DHV ") }, // Divehi (Dhivehi, Maldivian) (deprecated)
     LangTag { language: "dwk", 	tag: Tag::from_bytes(b"KUI ") }, // Dawik Kui -> Kui
     LangTag { language: "dwu", 	tag: Tag::from_bytes(b"DUJ ") }, // Dhuwal
     LangTag { language: "dwy", 	tag: Tag::from_bytes(b"DUJ ") }, // Dhuwaya -> Dhuwal
@@ -1684,7 +1684,7 @@ fn lang_matches(language: &str, spec: &str) -> bool {
 fn strncmp(s1: &str, s2: &str, n: usize) -> bool {
     let n1 = core::cmp::min(n, s1.len());
     let n2 = core::cmp::min(n, s2.len());
-    s1[..n1] == s2[..n2]
+    &s1[..n1] == &s2[..n2]
 }
 
 /// Converts a multi-subtag BCP 47 language tag to language tags.
