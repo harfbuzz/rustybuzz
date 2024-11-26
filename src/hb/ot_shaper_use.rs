@@ -101,6 +101,7 @@ pub mod category {
     pub const HVM: u8 = 53; // HIEROGLYPH_SEGMENT_END
     pub const HM: u8 = 54; // HIEROGLYPH_MOD
     pub const HR: u8 = 55; // HIEROGLYPH_MIRROR
+    pub const RK: u8 = 56; // REORDERING_KILLER
 }
 
 // These features are applied all at once, before reordering,

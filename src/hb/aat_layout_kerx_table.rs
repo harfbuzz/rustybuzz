@@ -248,8 +248,7 @@ fn apply_state_machine_kerning<T, E>(
         // go differently if we start from state 0 here.
         if state != START_OF_TEXT && buffer.backtrack_len() != 0 && buffer.idx < buffer.len {
             // If there's no value and we're just epsilon-transitioning to state 0, safe to break.
-            if entry.is_actionable() || entry.new_state != START_OF_TEXT || entry.has_advance()
-            {
+            if entry.is_actionable() || entry.new_state != START_OF_TEXT || entry.has_advance() {
                 buffer.unsafe_to_break_from_outbuffer(
                     Some(buffer.backtrack_len() - 1),
                     Some(buffer.idx + 1),
