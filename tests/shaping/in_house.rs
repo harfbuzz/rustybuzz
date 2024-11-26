@@ -15295,6 +15295,21 @@ fn use_syllable_008() {
 fn use_syllable_009() {
     assert_eq!(
         shape(
+            "tests/fonts/in-house/59a585a63b3df608fbeef00956c8c108deec7de6.ttf",
+            "\u{1BC7}\u{1BF3}\u{1BF3}",
+            "--no-glyph-names",
+        ),
+        "1=0+749|\
+         3=0+401|\
+         4=0+535|\
+         3=0+401"
+    );
+}
+
+#[test]
+fn use_syllable_010() {
+    assert_eq!(
+        shape(
             "tests/fonts/in-house/1ed7e9064f008f62de6ff0207bb4dd29409597a5.ttf",
             "\u{11064}\u{1107F}\u{11052}\u{11065}\u{1107F}\u{11053}",
             "",
@@ -15305,7 +15320,7 @@ fn use_syllable_009() {
 }
 
 #[test]
-fn use_syllable_010() {
+fn use_syllable_011() {
     assert_eq!(
         shape(
             "tests/fonts/in-house/28f497629c04ceb15546c9a70e0730125ed6698d.ttf",
@@ -15319,7 +15334,7 @@ fn use_syllable_010() {
 }
 
 #[test]
-fn use_syllable_011() {
+fn use_syllable_012() {
     assert_eq!(
         shape(
             "tests/fonts/in-house/28f497629c04ceb15546c9a70e0730125ed6698d.ttf",
@@ -15333,7 +15348,7 @@ fn use_syllable_011() {
 }
 
 #[test]
-fn use_syllable_012() {
+fn use_syllable_013() {
     assert_eq!(
         shape(
             "tests/fonts/in-house/28f497629c04ceb15546c9a70e0730125ed6698d.ttf",
@@ -15346,7 +15361,7 @@ fn use_syllable_012() {
 }
 
 #[test]
-fn use_syllable_013() {
+fn use_syllable_014() {
     assert_eq!(
         shape(
             "tests/fonts/in-house/86cdd983c4e4c4d7f27dd405d6ceb7d4b9ed3d35.ttf",
@@ -15360,7 +15375,7 @@ fn use_syllable_013() {
 }
 
 #[test]
-fn use_syllable_014() {
+fn use_syllable_015() {
     assert_eq!(
         shape(
             "tests/fonts/in-house/3cc01fede4debd4b7794ccb1b16cdb9987ea7571.ttf",
@@ -15374,7 +15389,7 @@ fn use_syllable_014() {
 }
 
 #[test]
-fn use_syllable_015() {
+fn use_syllable_016() {
     assert_eq!(
         shape(
             "tests/fonts/in-house/3cc01fede4debd4b7794ccb1b16cdb9987ea7571.ttf",
@@ -15392,7 +15407,7 @@ fn use_syllable_015() {
 }
 
 #[test]
-fn use_syllable_016() {
+fn use_syllable_017() {
     assert_eq!(
         shape(
             "tests/fonts/in-house/3cc01fede4debd4b7794ccb1b16cdb9987ea7571.ttf",
@@ -15411,7 +15426,7 @@ fn use_syllable_016() {
 }
 
 #[test]
-fn use_syllable_017() {
+fn use_syllable_018() {
     assert_eq!(
         shape(
             "tests/fonts/in-house/3cc01fede4debd4b7794ccb1b16cdb9987ea7571.ttf",
@@ -15429,7 +15444,7 @@ fn use_syllable_017() {
 }
 
 #[test]
-fn use_syllable_018() {
+fn use_syllable_019() {
     assert_eq!(
         shape(
             "tests/fonts/in-house/573d3a3177c9a8646e94c8a0d7b224334340946a.ttf",
@@ -15443,7 +15458,7 @@ fn use_syllable_018() {
 }
 
 #[test]
-fn use_syllable_019() {
+fn use_syllable_020() {
     assert_eq!(
         shape(
             "tests/fonts/in-house/573d3a3177c9a8646e94c8a0d7b224334340946a.ttf",
@@ -15457,7 +15472,7 @@ fn use_syllable_019() {
 }
 
 #[test]
-fn use_syllable_020() {
+fn use_syllable_021() {
     assert_eq!(
         shape(
             "tests/fonts/in-house/573d3a3177c9a8646e94c8a0d7b224334340946a.ttf",
@@ -15470,7 +15485,7 @@ fn use_syllable_020() {
 }
 
 #[test]
-fn use_syllable_021() {
+fn use_syllable_022() {
     assert_eq!(
         shape(
             "tests/fonts/in-house/e68a88939e0f06e34d2bc911f09b70890289c8fd.ttf",
@@ -15483,7 +15498,7 @@ fn use_syllable_021() {
 }
 
 #[test]
-fn use_syllable_022() {
+fn use_syllable_023() {
     assert_eq!(
         shape(
             "tests/fonts/in-house/2a670df15b73a5dc75a5cc491bde5ac93c5077dc.ttf",
@@ -15496,7 +15511,7 @@ fn use_syllable_022() {
 }
 
 #[test]
-fn use_syllable_023() {
+fn use_syllable_024() {
     assert_eq!(
         shape(
             "tests/fonts/in-house/2a670df15b73a5dc75a5cc491bde5ac93c5077dc.ttf",
@@ -15510,7 +15525,7 @@ fn use_syllable_023() {
 }
 
 #[test]
-fn use_syllable_024() {
+fn use_syllable_025() {
     assert_eq!(
         shape(
             "tests/fonts/in-house/a56745bac8449d0ad94918b2bb5930716ba02fe3.ttf",
@@ -15524,7 +15539,7 @@ fn use_syllable_024() {
 }
 
 #[test]
-fn use_syllable_025() {
+fn use_syllable_026() {
     assert_eq!(
         shape(
             "tests/fonts/in-house/d0430ea499348c420946f6abc2efc84fdf8f00e3.ttf",

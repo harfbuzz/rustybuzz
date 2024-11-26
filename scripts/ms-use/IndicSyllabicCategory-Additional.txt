@@ -13,7 +13,7 @@
 # OVERRIDES TO ASSIGNED VALUES
 # ================================================
 
-# Indic_Syllabic_Category=Bindu
+# Indic_Syllabic_Category=Bindu  
 193A          ; Bindu  # Mn       LIMBU SIGN KEMPHRENG
 AA29          ; Bindu  # Mn       CHAM VOWEL SIGN AA
 10A0D         ; Bindu  # Mn       KHAROSHTHI SIGN DOUBLE RING BELOW
@@ -47,14 +47,13 @@ AA29          ; Bindu  # Mn       CHAM VOWEL SIGN AA
 
 # ================================================
 
-# Indic_Syllabic_Category=Gemination_Mark
+# Indic_Syllabic_Category=Gemination_Mark 
 11134         ; Gemination_Mark  # Mc      CHAKMA MAAYYAA
 
 # ================================================
 
-# Indic_Syllabic_Category=Nukta
+# Indic_Syllabic_Category=Nukta   
 0F71          ; Nukta            # Mn       TIBETAN VOWEL SIGN AA # Reassigned to get this before an above vowel, but see #22
-1BF2..1BF3    ; Nukta            # Mc   [2] BATAK PANGOLAT..BATAK PANONGONAN # see USE issue #20
 113CF         ; Nukta            # Mc       TULU-TIGALARI SIGN LOOPED VIRAMA
 
 # ================================================
@@ -115,7 +114,7 @@ AABD          ; Vowel_Independent # Lo       TAI VIET VOWEL AN
 18B00..18CD5  ; Consonant # Lo  [470] KHITAN SMALL SCRIPT CHARACTER-18B00..KHITAN SMALL SCRIPT CHARACTER-18CD5
 18CFF         ; Consonant # Lo        KHITAN SMALL SCRIPT CHARACTER-18CFF
 1BC00..1BC6A  ; Consonant # Lo  [107] DUPLOYAN LETTER H..DUPLOYAN LETTER VOCALIC M
-1BC70..1BC7C  ; Consonant # Lo   [13] DUPLOYAN AFFIX LEFT HORIZONTAL SECANT..DUPLOYAN AFFIX ATTACHED TANGENT HOOK
+1BC70..1BC7C  ; Consonant # Lo   [13] DUPLOYAN AFFIX LEFT HORIZONTAL SECANT..DUPLOYAN AFFIX ATTACHED TANGENT HOOK 
 1BC80..1BC88  ; Consonant # Lo    [9] DUPLOYAN AFFIX HIGH ACUTE..DUPLOYAN AFFIX HIGH VERTICAL
 1BC90..1BC99  ; Consonant # Lo   [10] DUPLOYAN AFFIX LOW ACUTE..DUPLOYAN AFFIX LOW ARROW
 1E100..1E12C  ; Consonant # Lo   [45] NYIAKENG PUACHUE HMONG LETTER MA..NYIAKENG PUACHUE HMONG LETTER W

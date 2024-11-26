@@ -49,7 +49,7 @@ A9BE          ; Right   # Mc      JAVANESE CONSONANT SIGN PENGKAL # Reduced from
 AA35          ; Top     # Mn       CHAM CONSONANT SIGN
 1112A..1112B  ; Top     # Mn   [2] CHAKMA VOWEL SIGN U..CHAKMA VOWEL SIGN UU  # see USE issue #25
 11131..11132  ; Top     # Mn   [2] CHAKMA O MARK..CHAKMA AU MARK  # see USE issue #25
-1E4EC..1E4EF  ; Top     # Mn   [4] NAG MUNDARI SIGN MUHOR..NAG MUNDARI SIGN SUTUH # 1E4EE is below, but made to for ccc
+1E4EC..1E4EF  ; Top     # Mn   [4] NAG MUNDARI SIGN MUHOR..NAG MUNDARI SIGN SUTUH # 1E4EE is below, but made to for ccc 
 
 # ================================================
 
@@ -77,11 +77,12 @@ AA35          ; Top     # Mn       CHAM CONSONANT SIGN
 10F83         ; Bottom # Mn       OLD UYGHUR COMBINING DOT BELOW
 10F84         ; Bottom # Mn       OLD UYGHUR COMBINING TWO DOTS ABOVE # Overriden, ccc controls order
 10F85         ; Bottom # Mn       OLD UYGHUR COMBINING TWO DOTS BELOW
+113CF         ; Bottom # Mc       TULU-TIGALARI SIGN LOOPED VIRAMA    # Issue #17
 16F4F         ; Bottom # Mn       MIAO SIGN CONSONANT MODIFIER BAR
 16F51..16F87  ; Bottom # Mc  [55] MIAO SIGN ASPIRATION..MIAO VOWEL SIGN UI
 16F8F..16F92  ; Bottom # Mn   [4] MIAO TONE RIGHT..MIAO TONE BELOW
-1E5EE         ; Bottom  # Mn       OL ONAL SIGN MU # Not really below, but need to override to fit into Universal model
-1E5EF         ; Bottom  # Mn       OL ONAL SIGN IKIR
+1E5EE         ; Bottom # Mn       OL ONAL SIGN MU # Not really below, but need to override to fit into Universal model
+1E5EF         ; Bottom # Mn       OL ONAL SIGN IKIR
 
 # ================================================
 
@@ -94,7 +95,7 @@ AA35          ; Top     # Mn       CHAM CONSONANT SIGN
 07EB..07F3    ; Top   # Mn   [9] NKO COMBINING SHORT HIGH TONE..NKO COMBINING DOUBLE DOT ABOVE
 07FD          ; Top   # Mn       NKO DANTAYALAN # Not really top, but assigned here to allow ccc to control mark order
 1885..1886    ; Top   # Mn   [2] MONGOLIAN LETTER ALI GALI BALUDA..MONGOLIAN LETTER ALI GALI THREE BALUDA
-1B6C          ; Top   # Mn       BALINESE MUSICAL SYMBOL COMBINING ENDEP
+1B6C          ; Top   # Mn       BALINESE MUSICAL SYMBOL COMBINING ENDEP 
 1CF8..1CF9    ; Top   # Mn   [2] VEDIC TONE RING ABOVE..VEDIC TONE DOUBLE RING ABOVE
 10D24..10D27  ; Top   # Mn   [4] HANIFI ROHINGYA SIGN HARBAHAY..HANIFI ROHINGYA SIGN TASSI
 10EAB..10EAC  ; Top   # Mn   [2] YEZIDI COMBINING HAMZA MARK..YEZIDI COMBINING MADDA MARK
