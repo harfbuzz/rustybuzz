@@ -8,6 +8,7 @@ authors = [
     "خالد حسني (Khaled Hosny) <khaled@aliftype.com>"
 ]
 edition = "2021"
+rust-version = "1.65.0"
 description = "A complete harfbuzz shaping algorithm port to Rust."
 documentation = "https://docs.rs/rustybuzz/"
 readme = "README.md"
