@@ -8,6 +8,7 @@ authors = [
     "خالد حسني (Khaled Hosny) <khaled@aliftype.com>"
 ]
 edition = "2021"
+rust-version = "1.65.0"
 description = "A complete harfbuzz shaping algorithm port to Rust."
 documentation = "https://docs.rs/rustybuzz/"
 readme = "README.md"
@@ -30,7 +31,7 @@ wasmi = { version = "0.37.0", optional = true }
 log = "0.4.22"
 
 [dependencies.ttf-parser]
-version = "0.25.0"
+version = "0.25.1"
 default-features = false
 features = [
     "opentype-layout",
