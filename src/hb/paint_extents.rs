@@ -26,17 +26,17 @@ impl hb_extents_t {
     }
 
     pub fn union_(&mut self, o: &hb_extents_t) {
-        self.x_min = o.x_min.min(o.x_min);
-        self.y_min = o.y_min.min(o.y_min);
-        self.x_max = o.x_max.max(o.x_max);
-        self.y_max = o.y_max.max(o.y_max);
+        self.x_min = self.x_min.min(o.x_min);
+        self.y_min = self.y_min.min(o.y_min);
+        self.x_max = self.x_max.max(o.x_max);
+        self.y_max = self.y_max.max(o.y_max);
     }
 
     pub fn intersect(&mut self, o: &hb_extents_t) {
-        self.x_min = o.x_min.max(o.x_min);
-        self.y_min = o.y_min.max(o.y_min);
-        self.x_max = o.x_max.min(o.x_max);
-        self.y_max = o.y_max.min(o.y_max);
+        self.x_min = self.x_min.max(o.x_min);
+        self.y_min = self.y_min.max(o.y_min);
+        self.x_max = self.x_max.min(o.x_max);
+        self.y_max = self.y_max.min(o.y_max);
     }
 }
 

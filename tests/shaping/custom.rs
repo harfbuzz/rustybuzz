@@ -146,6 +146,23 @@ fn colr_002() {
 }
 
 #[test]
+fn colr_003() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F0300}\u{F0301}\u{F0302}\u{F0303}\u{F0304}\u{F0305}",
+            "--show-extents",
+        ),
+        "scale_0.5_1.5_center_500.0_500.0=0+1000<250,875,500,-750>|\
+         scale_1.5_1.5_center_500.0_500.0=1+1000<125,875,750,-750>|\
+         scale_0.5_1.5_center_0_0=2+1000<125,1125,625,-875>|\
+         scale_1.5_1.5_center_0_0=3+1000<250,1125,875,-875>|\
+         scale_0.5_1.5_center_1000_1000=4+1000<250,750,625,-875>|\
+         scale_1.5_1.5_center_1000_1000=5+1000<-125,750,875,-875>"
+    );
+}
+
+#[test]
 fn colr_004() {
     assert_eq!(
         shape(
@@ -177,6 +194,112 @@ fn colr_005() {
 }
 
 #[test]
+fn colr_006() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F0600}\u{F0601}\u{F0602}\u{F0603}",
+            "--show-extents",
+        ),
+        "rotate_10_center_0_0=0+1000<115,868,634,-618>|\
+         rotate_-10_center_1000_1000=1+1000<131,884,618,-634>|\
+         rotate_25_center_500.0_500.0=2+1000<167,832,664,-664>|\
+         rotate_-15_center_500.0_500.0=3+1000<193,806,612,-612>"
+    );
+}
+
+#[test]
+fn colr_007() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F0700}\u{F0701}\u{F0702}\u{F0703}\u{F0704}\u{F0705}",
+            "--show-extents",
+        ),
+        "skew_25_0_center_0_0=0+1000<-99,750,849,-500>|\
+         skew_25_0_center_500.0_500.0=1+1000<133,750,733,-500>|\
+         skew_0_15_center_0_0=2+1000<250,950,500,-700>|\
+         skew_0_15_center_500.0_500.0=3+1000<250,816,500,-633>|\
+         skew_-10_20_center_500.0_500.0=4+1000<205,840,588,-681>|\
+         skew_-10_20_center_1000_1000=5+1000<117,750,632,-772>"
+    );
+}
+
+#[test]
+fn colr_008() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F0800}\u{F0801}\u{F0802}\u{F0803}",
+            "--show-extents",
+        ),
+        "transform_matrix_1_0_0_1_125_125=0+1000<250,875,625,-625>|\
+         transform_matrix_1.5_0_0_1.5_0_0=1+1000<250,1125,875,-875>|\
+         transform_matrix_0.9659_0.2588_-0.2588_0.9659_0_0=2+1000<47,918,702,-668>|\
+         transform_matrix_1.0_0.0_0.6_1.0_-300.0_0.0=3+1000<100,750,800,-500>"
+    );
+}
+
+#[test]
+fn colr_009() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F0900}\u{F0901}\u{F0902}\u{F0903}\u{F0904}\u{F0905}\u{F0906}",
+            "--show-extents",
+        ),
+        "translate_0_0=0+1000<250,750,500,-500>|\
+         translate_0_100=1+1000<250,850,500,-600>|\
+         translate_0_-100=2+1000<250,750,500,-600>|\
+         translate_100_0=3+1000<250,750,600,-500>|\
+         translate_-100_0=4+1000<150,750,600,-500>|\
+         translate_200_200=5+1000<250,950,700,-700>|\
+         translate_-200_-200=6+1000<50,750,700,-700>"
+    );
+}
+
+#[test]
+fn colr_010() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F0A00}\u{F0A01}\u{F0A02}\u{F0A03}\u{F0A04}\u{F0A05}\u{F0A06}\u{F0A07}\u{F0A08}\u{F0A09}\
+             \u{F0A0A}\u{F0A0B}\u{F0A0C}\u{F0A0D}\u{F0A0E}\u{F0A0F}\u{F0A10}\u{F0A11}\u{F0A12}\u{F0A13}\
+             \u{F0A14}\u{F0A15}\u{F0A16}\u{F0A17}\u{F0A18}\u{F0A19}\u{F0A1A}\u{F0A1B}",
+            "--show-extents",
+        ),
+        "composite_CLEAR=0+1000<250,750,500,-500>|\
+         composite_SRC=1+1000<250,750,583,-583>|\
+         composite_DEST=2+1000<166,833,583,-583>|\
+         composite_SRC_OVER=3+1000<166,833,667,-667>|\
+         composite_DEST_OVER=4+1000<166,833,667,-667>|\
+         composite_SRC_IN=5+1000<250,750,500,-500>|\
+         composite_DEST_IN=6+1000<250,750,500,-500>|\
+         composite_SRC_OUT=7+1000<250,750,583,-583>|\
+         composite_DEST_OUT=8+1000<166,833,583,-583>|\
+         composite_SRC_ATOP=9+1000<166,833,667,-667>|\
+         composite_DEST_ATOP=10+1000<166,833,667,-667>|\
+         composite_XOR=11+1000<166,833,667,-667>|\
+         composite_PLUS=12+1000<166,833,667,-667>|\
+         composite_SCREEN=13+1000<166,833,667,-667>|\
+         composite_OVERLAY=14+1000<166,833,667,-667>|\
+         composite_DARKEN=15+1000<166,833,667,-667>|\
+         composite_LIGHTEN=16+1000<166,833,667,-667>|\
+         composite_COLOR_DODGE=17+1000<166,833,667,-667>|\
+         composite_COLOR_BURN=18+1000<166,833,667,-667>|\
+         composite_HARD_LIGHT=19+1000<166,833,667,-667>|\
+         composite_SOFT_LIGHT=20+1000<166,833,667,-667>|\
+         composite_DIFFERENCE=21+1000<166,833,667,-667>|\
+         composite_EXCLUSION=22+1000<166,833,667,-667>|\
+         composite_MULTIPLY=23+1000<166,833,667,-667>|\
+         composite_HSL_HUE=24+1000<166,833,667,-667>|\
+         composite_HSL_SATURATION=25+1000<166,833,667,-667>|\
+         composite_HSL_COLOR=26+1000<166,833,667,-667>|\
+         composite_HSL_LUMINOSITY=27+1000<166,833,667,-667>"
+    );
+}
+
+#[test]
 fn colr_013() {
     assert_eq!(
         shape(
@@ -185,6 +308,18 @@ fn colr_013() {
             "--show-extents",
         ),
         "gradient_p2_skewed=0+1250<100,950,1100,-700>"
+    );
+}
+
+#[test]
+fn colr_016() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F1000}",
+            "--show-extents",
+        ),
+        "solid_colorline_alpha=0+1000<0,950,1000,-700>"
     );
 }
 
@@ -198,6 +333,18 @@ fn colr_017() {
         ),
         "paintcolrglyph_cycle_first=0+1000<0,0,0,0>|\
          paintcolrglyph_cycle_second=1+1000<0,0,0,0>"
+    );
+}
+
+#[test]
+fn colr_018() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F1200}",
+            "--show-extents",
+        ),
+        "no_cycle_multi_colrglyph=0+1000<0,950,1000,-700>"
     );
 }
 
