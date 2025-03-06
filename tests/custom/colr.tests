@@ -18,3 +18,4 @@ tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf;--show-extents;U+F
 tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf;--show-extents;U+F1200;
 tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf;--show-extents;U+F1300,U+F1301,U+F1302,U+F1303,U+F1304,U+F1305,U+F1306,U+F1307,U+F1308,U+F1309,U+F130A,U+F130B,U+F130C,U+F130D,U+F130E,U+F130F,U+F1310,U+F1311,U+F1312,U+F1313,U+F1314,U+F1315,U+F1316,U+F1317;
 tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf;--show-extents;U+F1400,U+F1401,U+F1402,U+F1403,U+F1404,U+F1405,U+F1406,U+F1407,U+F1408,U+F1409,U+F140A,U+F140B,U+F140C,U+F140D,U+F140E,U+F140F;
+tests/fonts/rb_custom/BungeeTint-Regular.ttf;--show-extents;U+0041,U+0042,U+0043,U+002C;

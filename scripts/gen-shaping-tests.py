@@ -48,9 +48,15 @@ IGNORE_TEST_CASES = [
     # which we don't do yet. Is basically the same as morx_20_005, but with `--show-flags`
     "glyph_flags_002",
 
-    # These currently return different results from harfbuzz.
+    # The glyph extents are shifted 100 units to the right in HarfBuzz due to "undocumented rasterizer behavior"
+    # (see https://github.com/harfbuzz/harfbuzz/blob/462a54895b97cf5a3fd023f4ea5528a9b0e14e0e/src/OT/glyf/Glyph.hh#L520-L528
+    # and https://github.com/harfbuzz/harfbuzz/pull/1999).
+    # ttf-parser currently does not implement this.
     "colr_011",
+
+    # Requires support in ttf-parser (https://github.com/harfbuzz/ttf-parser/pull/185)
     "colr_014",
+    "colr_021",
 ]
 
 
