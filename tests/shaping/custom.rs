@@ -41,6 +41,452 @@ fn bugs_003() {
 }
 
 #[test]
+fn colr_001() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F0100}\u{F0101}\u{F0102}\u{F0103}",
+            "--show-extents",
+        ),
+        "linear_repeat_0_1=0+1000<100,950,800,-700>|\
+         linear_repeat_0.2_0.8=1+1000<100,950,800,-700>|\
+         linear_repeat_0_1.5=2+1000<100,950,800,-700>|\
+         linear_repeat_0.5_1.5=3+1000<100,950,800,-700>"
+    );
+}
+
+#[test]
+fn colr_002() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F0200}\u{F0201}\u{F0202}\u{F0203}\u{F0204}\u{F0205}\u{F0206}\u{F0207}\u{F0208}\u{F0209}\
+             \u{F020A}\u{F020B}\u{F020C}\u{F020D}\u{F020E}\u{F020F}\u{F0210}\u{F0211}\u{F0212}\u{F0213}\
+             \u{F0214}\u{F0215}\u{F0216}\u{F0217}\u{F0218}\u{F0219}\u{F021A}\u{F021B}\u{F021C}\u{F021D}\
+             \u{F021E}\u{F021F}\u{F0220}\u{F0221}\u{F0222}\u{F0223}\u{F0224}\u{F0225}\u{F0226}\u{F0227}\
+             \u{F0228}\u{F0229}\u{F022A}\u{F022B}\u{F022C}\u{F022D}\u{F022E}\u{F022F}\u{F0230}\u{F0231}\
+             \u{F0232}\u{F0233}\u{F0234}\u{F0235}\u{F0236}\u{F0237}\u{F0238}\u{F0239}\u{F023A}\u{F023B}\
+             \u{F023C}\u{F023D}\u{F023E}\u{F023F}\u{F0240}\u{F0241}\u{F0242}\u{F0243}\u{F0244}\u{F0245}\
+             \u{F0246}\u{F0247}",
+            "--show-extents",
+        ),
+        "sweep_0_360_pad_narrow=0+1000<150,950,700,-700>|\
+         sweep_60_300_pad_narrow=1+1000<150,950,700,-700>|\
+         sweep_0_90_pad_narrow=2+1000<150,950,700,-700>|\
+         sweep_90_0_pad_narrow=3+1000<150,950,700,-700>|\
+         sweep_45_90_pad_narrow=4+1000<150,950,700,-700>|\
+         sweep_90_45_pad_narrow=5+1000<150,950,700,-700>|\
+         sweep_247.5_292.5_pad_narrow=6+1000<150,950,700,-700>|\
+         sweep_-45_45_pad_narrow=7+1000<150,950,700,-700>|\
+         sweep_45_-45_pad_narrow=8+1000<150,950,700,-700>|\
+         sweep_270_440_pad_narrow=9+1000<150,950,700,-700>|\
+         sweep_440_270_pad_narrow=10+1000<150,950,700,-700>|\
+         sweep_-180_540_pad_narrow=11+1000<150,950,700,-700>|\
+         sweep_0_360_reflect_narrow=12+1000<150,950,700,-700>|\
+         sweep_60_300_reflect_narrow=13+1000<150,950,700,-700>|\
+         sweep_0_90_reflect_narrow=14+1000<150,950,700,-700>|\
+         sweep_90_0_reflect_narrow=15+1000<150,950,700,-700>|\
+         sweep_45_90_reflect_narrow=16+1000<150,950,700,-700>|\
+         sweep_90_45_reflect_narrow=17+1000<150,950,700,-700>|\
+         sweep_247.5_292.5_reflect_narrow=18+1000<150,950,700,-700>|\
+         sweep_-45_45_reflect_narrow=19+1000<150,950,700,-700>|\
+         sweep_45_-45_reflect_narrow=20+1000<150,950,700,-700>|\
+         sweep_270_440_reflect_narrow=21+1000<150,950,700,-700>|\
+         sweep_440_270_reflect_narrow=22+1000<150,950,700,-700>|\
+         sweep_-180_540_reflect_narrow=23+1000<150,950,700,-700>|\
+         sweep_0_360_repeat_narrow=24+1000<150,950,700,-700>|\
+         sweep_60_300_repeat_narrow=25+1000<150,950,700,-700>|\
+         sweep_0_90_repeat_narrow=26+1000<150,950,700,-700>|\
+         sweep_90_0_repeat_narrow=27+1000<150,950,700,-700>|\
+         sweep_45_90_repeat_narrow=28+1000<150,950,700,-700>|\
+         sweep_90_45_repeat_narrow=29+1000<150,950,700,-700>|\
+         sweep_247.5_292.5_repeat_narrow=30+1000<150,950,700,-700>|\
+         sweep_-45_45_repeat_narrow=31+1000<150,950,700,-700>|\
+         sweep_45_-45_repeat_narrow=32+1000<150,950,700,-700>|\
+         sweep_270_440_repeat_narrow=33+1000<150,950,700,-700>|\
+         sweep_440_270_repeat_narrow=34+1000<150,950,700,-700>|\
+         sweep_-180_540_repeat_narrow=35+1000<150,950,700,-700>|\
+         sweep_0_360_pad_wide=36+1000<150,950,700,-700>|\
+         sweep_60_300_pad_wide=37+1000<150,950,700,-700>|\
+         sweep_0_90_pad_wide=38+1000<150,950,700,-700>|\
+         sweep_90_0_pad_wide=39+1000<150,950,700,-700>|\
+         sweep_45_90_pad_wide=40+1000<150,950,700,-700>|\
+         sweep_90_45_pad_wide=41+1000<150,950,700,-700>|\
+         sweep_247.5_292.5_pad_wide=42+1000<150,950,700,-700>|\
+         sweep_-45_45_pad_wide=43+1000<150,950,700,-700>|\
+         sweep_45_-45_pad_wide=44+1000<150,950,700,-700>|\
+         sweep_270_440_pad_wide=45+1000<150,950,700,-700>|\
+         sweep_440_270_pad_wide=46+1000<150,950,700,-700>|\
+         sweep_-180_540_pad_wide=47+1000<150,950,700,-700>|\
+         sweep_0_360_reflect_wide=48+1000<150,950,700,-700>|\
+         sweep_60_300_reflect_wide=49+1000<150,950,700,-700>|\
+         sweep_0_90_reflect_wide=50+1000<150,950,700,-700>|\
+         sweep_90_0_reflect_wide=51+1000<150,950,700,-700>|\
+         sweep_45_90_reflect_wide=52+1000<150,950,700,-700>|\
+         sweep_90_45_reflect_wide=53+1000<150,950,700,-700>|\
+         sweep_247.5_292.5_reflect_wide=54+1000<150,950,700,-700>|\
+         sweep_-45_45_reflect_wide=55+1000<150,950,700,-700>|\
+         sweep_45_-45_reflect_wide=56+1000<150,950,700,-700>|\
+         sweep_270_440_reflect_wide=57+1000<150,950,700,-700>|\
+         sweep_440_270_reflect_wide=58+1000<150,950,700,-700>|\
+         sweep_-180_540_reflect_wide=59+1000<150,950,700,-700>|\
+         sweep_0_360_repeat_wide=60+1000<150,950,700,-700>|\
+         sweep_60_300_repeat_wide=61+1000<150,950,700,-700>|\
+         sweep_0_90_repeat_wide=62+1000<150,950,700,-700>|\
+         sweep_90_0_repeat_wide=63+1000<150,950,700,-700>|\
+         sweep_45_90_repeat_wide=64+1000<150,950,700,-700>|\
+         sweep_90_45_repeat_wide=65+1000<150,950,700,-700>|\
+         sweep_247.5_292.5_repeat_wide=66+1000<150,950,700,-700>|\
+         sweep_-45_45_repeat_wide=67+1000<150,950,700,-700>|\
+         sweep_45_-45_repeat_wide=68+1000<150,950,700,-700>|\
+         sweep_270_440_repeat_wide=69+1000<150,950,700,-700>|\
+         sweep_440_270_repeat_wide=70+1000<150,950,700,-700>|\
+         sweep_-180_540_repeat_wide=71+1000<150,950,700,-700>"
+    );
+}
+
+#[test]
+fn colr_003() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F0300}\u{F0301}\u{F0302}\u{F0303}\u{F0304}\u{F0305}",
+            "--show-extents",
+        ),
+        "scale_0.5_1.5_center_500.0_500.0=0+1000<250,875,500,-750>|\
+         scale_1.5_1.5_center_500.0_500.0=1+1000<125,875,750,-750>|\
+         scale_0.5_1.5_center_0_0=2+1000<125,1125,625,-875>|\
+         scale_1.5_1.5_center_0_0=3+1000<250,1125,875,-875>|\
+         scale_0.5_1.5_center_1000_1000=4+1000<250,750,625,-875>|\
+         scale_1.5_1.5_center_1000_1000=5+1000<-125,750,875,-875>"
+    );
+}
+
+#[test]
+fn colr_004() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F0500}\u{F0501}\u{F0502}",
+            "--show-extents",
+        ),
+        "linear_gradient_extend_mode_pad=0+1000<0,1000,1000,-1000>|\
+         linear_gradient_extend_mode_repeat=1+1000<0,1000,1000,-1000>|\
+         linear_gradient_extend_mode_reflect=2+1000<0,1000,1000,-1000>"
+    );
+}
+
+#[test]
+fn colr_005() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F0503}\u{F0504}\u{F0505}\u{F0506}\u{F0507}\u{F0508}",
+            "--show-extents",
+        ),
+        "radial_contained_gradient_extend_mode_pad=0+1000<0,1000,1000,-1000>|\
+         radial_contained_gradient_extend_mode_repeat=1+1000<0,1000,1000,-1000>|\
+         radial_contained_gradient_extend_mode_reflect=2+1000<0,1000,1000,-1000>|\
+         radial_horizontal_gradient_extend_mode_pad=3+1000<0,1000,1000,-1000>|\
+         radial_horizontal_gradient_extend_mode_repeat=4+1000<0,1000,1000,-1000>|\
+         radial_horizontal_gradient_extend_mode_reflect=5+1000<0,1000,1000,-1000>"
+    );
+}
+
+#[test]
+fn colr_006() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F0600}\u{F0601}\u{F0602}\u{F0603}",
+            "--show-extents",
+        ),
+        "rotate_10_center_0_0=0+1000<115,868,634,-618>|\
+         rotate_-10_center_1000_1000=1+1000<131,884,618,-634>|\
+         rotate_25_center_500.0_500.0=2+1000<167,832,664,-664>|\
+         rotate_-15_center_500.0_500.0=3+1000<193,806,612,-612>"
+    );
+}
+
+#[test]
+fn colr_007() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F0700}\u{F0701}\u{F0702}\u{F0703}\u{F0704}\u{F0705}",
+            "--show-extents",
+        ),
+        "skew_25_0_center_0_0=0+1000<-99,750,849,-500>|\
+         skew_25_0_center_500.0_500.0=1+1000<133,750,733,-500>|\
+         skew_0_15_center_0_0=2+1000<250,950,500,-700>|\
+         skew_0_15_center_500.0_500.0=3+1000<250,816,500,-633>|\
+         skew_-10_20_center_500.0_500.0=4+1000<205,840,588,-681>|\
+         skew_-10_20_center_1000_1000=5+1000<117,750,632,-772>"
+    );
+}
+
+#[test]
+fn colr_008() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F0800}\u{F0801}\u{F0802}\u{F0803}",
+            "--show-extents",
+        ),
+        "transform_matrix_1_0_0_1_125_125=0+1000<250,875,625,-625>|\
+         transform_matrix_1.5_0_0_1.5_0_0=1+1000<250,1125,875,-875>|\
+         transform_matrix_0.9659_0.2588_-0.2588_0.9659_0_0=2+1000<47,918,702,-668>|\
+         transform_matrix_1.0_0.0_0.6_1.0_-300.0_0.0=3+1000<100,750,800,-500>"
+    );
+}
+
+#[test]
+fn colr_009() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F0900}\u{F0901}\u{F0902}\u{F0903}\u{F0904}\u{F0905}\u{F0906}",
+            "--show-extents",
+        ),
+        "translate_0_0=0+1000<250,750,500,-500>|\
+         translate_0_100=1+1000<250,850,500,-600>|\
+         translate_0_-100=2+1000<250,750,500,-600>|\
+         translate_100_0=3+1000<250,750,600,-500>|\
+         translate_-100_0=4+1000<150,750,600,-500>|\
+         translate_200_200=5+1000<250,950,700,-700>|\
+         translate_-200_-200=6+1000<50,750,700,-700>"
+    );
+}
+
+#[test]
+fn colr_010() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F0A00}\u{F0A01}\u{F0A02}\u{F0A03}\u{F0A04}\u{F0A05}\u{F0A06}\u{F0A07}\u{F0A08}\u{F0A09}\
+             \u{F0A0A}\u{F0A0B}\u{F0A0C}\u{F0A0D}\u{F0A0E}\u{F0A0F}\u{F0A10}\u{F0A11}\u{F0A12}\u{F0A13}\
+             \u{F0A14}\u{F0A15}\u{F0A16}\u{F0A17}\u{F0A18}\u{F0A19}\u{F0A1A}\u{F0A1B}",
+            "--show-extents",
+        ),
+        "composite_CLEAR=0+1000<250,750,500,-500>|\
+         composite_SRC=1+1000<250,750,583,-583>|\
+         composite_DEST=2+1000<166,833,583,-583>|\
+         composite_SRC_OVER=3+1000<166,833,667,-667>|\
+         composite_DEST_OVER=4+1000<166,833,667,-667>|\
+         composite_SRC_IN=5+1000<250,750,500,-500>|\
+         composite_DEST_IN=6+1000<250,750,500,-500>|\
+         composite_SRC_OUT=7+1000<250,750,583,-583>|\
+         composite_DEST_OUT=8+1000<166,833,583,-583>|\
+         composite_SRC_ATOP=9+1000<166,833,667,-667>|\
+         composite_DEST_ATOP=10+1000<166,833,667,-667>|\
+         composite_XOR=11+1000<166,833,667,-667>|\
+         composite_PLUS=12+1000<166,833,667,-667>|\
+         composite_SCREEN=13+1000<166,833,667,-667>|\
+         composite_OVERLAY=14+1000<166,833,667,-667>|\
+         composite_DARKEN=15+1000<166,833,667,-667>|\
+         composite_LIGHTEN=16+1000<166,833,667,-667>|\
+         composite_COLOR_DODGE=17+1000<166,833,667,-667>|\
+         composite_COLOR_BURN=18+1000<166,833,667,-667>|\
+         composite_HARD_LIGHT=19+1000<166,833,667,-667>|\
+         composite_SOFT_LIGHT=20+1000<166,833,667,-667>|\
+         composite_DIFFERENCE=21+1000<166,833,667,-667>|\
+         composite_EXCLUSION=22+1000<166,833,667,-667>|\
+         composite_MULTIPLY=23+1000<166,833,667,-667>|\
+         composite_HSL_HUE=24+1000<166,833,667,-667>|\
+         composite_HSL_SATURATION=25+1000<166,833,667,-667>|\
+         composite_HSL_COLOR=26+1000<166,833,667,-667>|\
+         composite_HSL_LUMINOSITY=27+1000<166,833,667,-667>"
+    );
+}
+
+#[test]
+fn colr_011() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F0B00}\u{F0B01}\u{F0B02}\u{F0B03}\u{F0B04}\u{F0B05}\u{F0B06}\u{F0B07}",
+            "--show-extents",
+        ),
+        "foreground_color_linear_alpha_1=0+1000<100,1000,1000,-1000>|\
+         foreground_color_linear_alpha_0.3=1+1000<100,1000,1000,-1000>|\
+         foreground_color_radial_alpha_1=2+1000<100,1000,1000,-1000>|\
+         foreground_color_radial_alpha_0.3=3+1000<100,1000,1000,-1000>|\
+         foreground_color_sweep_alpha_1=4+1000<100,1000,1000,-1000>|\
+         foreground_color_sweep_alpha_0.3=5+1000<100,1000,1000,-1000>|\
+         foreground_color_solid_alpha_1=6+1000<100,1000,1000,-1000>|\
+         foreground_color_solid_alpha_0.3=7+1000<100,1000,1000,-1000>"
+    );
+}
+
+#[test]
+fn colr_012() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F0C00}\u{F0C01}\u{F0C02}\u{F0C03}\u{F0C04}\u{F0C05}\u{F0C06}\u{F0C07}\u{F0C08}\u{F0C09}\
+             \u{F0C0A}",
+            "--show-extents",
+        ),
+        "clip_box_top_left=0+1000<0,1000,1000,-1000>|\
+         clip_box_bottom_left=1+1000<0,1000,1000,-1000>|\
+         clip_box_bottom_right=2+1000<0,1000,1000,-1000>|\
+         clip_box_top_right=3+1000<0,1000,1000,-1000>|\
+         clip_box_center=4+1000<0,1000,1000,-1000>|\
+         clip_shade_top_left=5+1000<0,1000,500,-500>|\
+         clip_shade_bottom_left=6+1000<0,500,500,-500>|\
+         clip_shade_bottom_right=7+1000<500,500,500,-500>|\
+         clip_shade_top_right=8+1000<500,1000,500,-500>|\
+         clip_shade_center=9+1000<250,750,500,-500>|\
+         inset_clipped_radial_reflect=10+1000<0,1000,1000,-1000>"
+    );
+}
+
+#[test]
+fn colr_013() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F0D00}",
+            "--show-extents",
+        ),
+        "gradient_p2_skewed=0+1250<100,950,1100,-700>"
+    );
+}
+
+#[test]
+fn colr_014() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F0E00}\u{F0E01}",
+            "--show-extents",
+        ),
+        "colored_circles_v0=0+1000<150,950,700,-704>|\
+         colored_circles_v1=1+1000<150,950,700,-700>"
+    );
+}
+
+#[test]
+fn colr_015() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F0F00}\u{F0F01}\u{F0F02}\u{F0F03}\u{F0F04}\u{F0F05}\u{F0F06}",
+            "--show-extents",
+        ),
+        "circle_r50=0+1000<450,650,100,-100>|\
+         circle_r100=1+1000<400,700,200,-200>|\
+         circle_r150=2+1000<350,750,300,-300>|\
+         circle_r200=3+1000<300,800,400,-400>|\
+         circle_r250=4+1000<250,850,500,-500>|\
+         circle_r300=5+1000<200,900,600,-600>|\
+         circle_r350=6+1000<150,950,700,-700>"
+    );
+}
+
+#[test]
+fn colr_016() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F1000}",
+            "--show-extents",
+        ),
+        "solid_colorline_alpha=0+1000<0,950,1000,-700>"
+    );
+}
+
+#[test]
+fn colr_017() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F1100}\u{F1101}",
+            "--show-extents",
+        ),
+        "paintcolrglyph_cycle_first=0+1000<0,0,0,0>|\
+         paintcolrglyph_cycle_second=1+1000<0,0,0,0>"
+    );
+}
+
+#[test]
+fn colr_018() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F1200}",
+            "--show-extents",
+        ),
+        "no_cycle_multi_colrglyph=0+1000<0,950,1000,-700>"
+    );
+}
+
+#[test]
+fn colr_019() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F1300}\u{F1301}\u{F1302}\u{F1303}\u{F1304}\u{F1305}\u{F1306}\u{F1307}\u{F1308}\u{F1309}\
+             \u{F130A}\u{F130B}\u{F130C}\u{F130D}\u{F130E}\u{F130F}\u{F1310}\u{F1311}\u{F1312}\u{F1313}\
+             \u{F1314}\u{F1315}\u{F1316}\u{F1317}",
+            "--show-extents",
+        ),
+        "sweep_coincident_angles_forward_blue_red_pad=0+1000<150,950,700,-700>|\
+         sweep_coincident_angles_forward_blue_red_reflect=1+1000<150,950,700,-700>|\
+         sweep_coincident_angles_forward_blue_red_repeat=2+1000<150,950,700,-700>|\
+         sweep_coincident_angles_forward_linen_gray_pad=3+1000<150,950,700,-700>|\
+         sweep_coincident_angles_forward_linen_gray_reflect=4+1000<150,950,700,-700>|\
+         sweep_coincident_angles_forward_linen_gray_repeat=5+1000<150,950,700,-700>|\
+         sweep_coincident_angles_reverse_blue_red_pad=6+1000<150,950,700,-700>|\
+         sweep_coincident_angles_reverse_blue_red_reflect=7+1000<150,950,700,-700>|\
+         sweep_coincident_angles_reverse_blue_red_repeat=8+1000<150,950,700,-700>|\
+         sweep_coincident_angles_reverse_linen_gray_pad=9+1000<150,950,700,-700>|\
+         sweep_coincident_angles_reverse_linen_gray_reflect=10+1000<150,950,700,-700>|\
+         sweep_coincident_angles_reverse_linen_gray_repeat=11+1000<150,950,700,-700>|\
+         sweep_coincident_stops_forward_blue_red_pad=12+1000<150,950,700,-700>|\
+         sweep_coincident_stops_forward_blue_red_reflect=13+1000<150,950,700,-700>|\
+         sweep_coincident_stops_forward_blue_red_repeat=14+1000<150,950,700,-700>|\
+         sweep_coincident_stops_forward_linen_gray_pad=15+1000<150,950,700,-700>|\
+         sweep_coincident_stops_forward_linen_gray_reflect=16+1000<150,950,700,-700>|\
+         sweep_coincident_stops_forward_linen_gray_repeat=17+1000<150,950,700,-700>|\
+         sweep_coincident_stops_reverse_blue_red_pad=18+1000<150,950,700,-700>|\
+         sweep_coincident_stops_reverse_blue_red_reflect=19+1000<150,950,700,-700>|\
+         sweep_coincident_stops_reverse_blue_red_repeat=20+1000<150,950,700,-700>|\
+         sweep_coincident_stops_reverse_linen_gray_pad=21+1000<150,950,700,-700>|\
+         sweep_coincident_stops_reverse_linen_gray_reflect=22+1000<150,950,700,-700>|\
+         sweep_coincident_stops_reverse_linen_gray_repeat=23+1000<150,950,700,-700>"
+    );
+}
+
+#[test]
+fn colr_020() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F1400}\u{F1401}\u{F1402}\u{F1403}\u{F1404}\u{F1405}\u{F1406}\u{F1407}\u{F1408}\u{F1409}\
+             \u{F140A}\u{F140B}\u{F140C}\u{F140D}\u{F140E}\u{F140F}",
+            "--show-extents",
+        ),
+        "paint_glyph_nested_identity_identity=0+1000<200,770,600,-520>|\
+         paint_glyph_nested_identity_translate=1+1000<200,770,600,-520>|\
+         paint_glyph_nested_identity_rotate_origin=2+1000<200,770,600,-520>|\
+         paint_glyph_nested_identity_rotate_center=3+1000<200,770,600,-520>|\
+         paint_glyph_nested_translate_identity=4+1000<320,890,600,-520>|\
+         paint_glyph_nested_translate_translate=5+1000<320,890,600,-520>|\
+         paint_glyph_nested_translate_rotate_origin=6+1000<320,890,600,-520>|\
+         paint_glyph_nested_translate_rotate_center=7+1000<320,890,600,-520>|\
+         paint_glyph_nested_rotate_origin_identity=8+1000<63,897,681,-616>|\
+         paint_glyph_nested_rotate_origin_translate=9+1000<63,897,681,-616>|\
+         paint_glyph_nested_rotate_origin_rotate_origin=10+1000<63,897,681,-616>|\
+         paint_glyph_nested_rotate_origin_rotate_center=11+1000<63,897,681,-616>|\
+         paint_glyph_nested_rotate_center_identity=12+1000<124,899,750,-779>|\
+         paint_glyph_nested_rotate_center_translate=13+1000<124,899,750,-779>|\
+         paint_glyph_nested_rotate_center_rotate_origin=14+1000<124,899,750,-779>|\
+         paint_glyph_nested_rotate_center_rotate_center=15+1000<124,899,750,-779>"
+    );
+}
+
+#[test]
 fn fuzzer_001() {
     assert_eq!(
         shape(

@@ -222,6 +222,8 @@ def convert_test_files(root_dir, hb_shape_exe, tests_dir, tests_name, files, cus
                 root_dir, hb_shape_exe, tests_name, file, idx + 1, test, fonts, custom
             )
 
+    # Strip the extra trailing newline to avoid formatting churn
+    rust_code = rust_code[:-1]
     tests_name_snake_case = tests_name.replace("-", "_")
     with open(f"../tests/shaping/{tests_name_snake_case}.rs", "w") as f:
         f.write(rust_code)
