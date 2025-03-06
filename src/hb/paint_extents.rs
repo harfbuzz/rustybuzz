@@ -174,7 +174,10 @@ impl<'a> hb_paint_extents_context_t<'a> {
             r.transform_extents(&mut extents);
         }
 
-        let b = hb_bounds_t::from_extents(&extents);
+        let mut b = hb_bounds_t::from_extents(&extents);
+        if let Some(clip) = self.clips.last() {
+            b.intersect(clip);
+        }
         self.clips.push(b);
     }
 
