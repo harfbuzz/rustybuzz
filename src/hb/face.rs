@@ -267,10 +267,6 @@ impl<'a> hb_font_t<'a> {
                 return true;
             }
         } else if let Some(colr) = self.ttfp_face.tables().colr {
-            if colr.is_simple() {
-                return false;
-            }
-
             if let Some(clip_box) = colr.clip_box(glyph, self.variation_coordinates()) {
                 // Floor
                 glyph_extents.x_bearing = (clip_box.x_min).round() as i32;
