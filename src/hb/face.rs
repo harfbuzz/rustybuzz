@@ -300,7 +300,9 @@ impl<'a> hb_font_t<'a> {
                 glyph_extents.height = (e.y_min - e.y_max) as i32;
             }
 
-            return ret;
+            if ret {
+                return true;
+            }
         }
 
         let mut bbox = None;

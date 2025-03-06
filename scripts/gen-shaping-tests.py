@@ -50,9 +50,7 @@ IGNORE_TEST_CASES = [
 
     # These currently return different results from harfbuzz.
     "colr_011",
-    "colr_012",
     "colr_014",
-    "colr_015",
 ]
 
 

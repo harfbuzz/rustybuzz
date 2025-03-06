@@ -300,6 +300,29 @@ fn colr_010() {
 }
 
 #[test]
+fn colr_012() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F0C00}\u{F0C01}\u{F0C02}\u{F0C03}\u{F0C04}\u{F0C05}\u{F0C06}\u{F0C07}\u{F0C08}\u{F0C09}\
+             \u{F0C0A}",
+            "--show-extents",
+        ),
+        "clip_box_top_left=0+1000<0,1000,1000,-1000>|\
+         clip_box_bottom_left=1+1000<0,1000,1000,-1000>|\
+         clip_box_bottom_right=2+1000<0,1000,1000,-1000>|\
+         clip_box_top_right=3+1000<0,1000,1000,-1000>|\
+         clip_box_center=4+1000<0,1000,1000,-1000>|\
+         clip_shade_top_left=5+1000<0,1000,500,-500>|\
+         clip_shade_bottom_left=6+1000<0,500,500,-500>|\
+         clip_shade_bottom_right=7+1000<500,500,500,-500>|\
+         clip_shade_top_right=8+1000<500,1000,500,-500>|\
+         clip_shade_center=9+1000<250,750,500,-500>|\
+         inset_clipped_radial_reflect=10+1000<0,1000,1000,-1000>"
+    );
+}
+
+#[test]
 fn colr_013() {
     assert_eq!(
         shape(
@@ -308,6 +331,24 @@ fn colr_013() {
             "--show-extents",
         ),
         "gradient_p2_skewed=0+1250<100,950,1100,-700>"
+    );
+}
+
+#[test]
+fn colr_015() {
+    assert_eq!(
+        shape(
+            "tests/fonts/rb_custom/test_glyphs-glyf_colr_1_no_cliplist.ttf",
+            "\u{F0F00}\u{F0F01}\u{F0F02}\u{F0F03}\u{F0F04}\u{F0F05}\u{F0F06}",
+            "--show-extents",
+        ),
+        "circle_r50=0+1000<450,650,100,-100>|\
+         circle_r100=1+1000<400,700,200,-200>|\
+         circle_r150=2+1000<350,750,300,-300>|\
+         circle_r200=3+1000<300,800,400,-400>|\
+         circle_r250=4+1000<250,850,500,-500>|\
+         circle_r300=5+1000<200,900,600,-600>|\
+         circle_r350=6+1000<150,950,700,-700>"
     );
 }
 
