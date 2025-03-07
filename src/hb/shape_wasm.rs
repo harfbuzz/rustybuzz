@@ -214,7 +214,7 @@ fn font_get_glyph_v_advance(caller: Caller<'_, ShapingData>, _font: u32, glyph: 
     caller.data().font.glyph_v_advance(GlyphId(glyph as u16))
 }
 
-#[repr(C)]
+#[repr(u32)]
 #[derive(Clone, Copy, Debug)]
 enum PointType {
     MoveTo,
@@ -237,7 +237,7 @@ impl OutlinePoint {
 }
 
 unsafe impl bytemuck::Zeroable for OutlinePoint {}
-unsafe impl bytemuck::Pod for OutlinePoint {}
+unsafe impl bytemuck::NoUninit for OutlinePoint {}
 
 #[derive(Default)]
 struct GlyphOutline {
