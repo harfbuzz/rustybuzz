@@ -237,6 +237,8 @@ fn new_tag_from_script(script: Script) -> Option<hb_tag_t> {
 fn old_tag_from_script(script: Script) -> hb_tag_t {
     // This seems to be accurate as of end of 2012.
     match script {
+        script::MATH => hb_tag_t::from_bytes(b"math"),
+
         // Katakana and Hiragana both map to 'kana'.
         script::HIRAGANA => hb_tag_t::from_bytes(b"kana"),
 
