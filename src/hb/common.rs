@@ -469,7 +469,7 @@ pub mod script {
     pub const TODHRI: Script = Script::from_bytes(b"Todr");
     pub const TULU_TIGALARI: Script = Script::from_bytes(b"Tutg");
 
-    pub const SCRIPT_MATH: Script = Script::from_bytes(b"Zmth");
+    pub const MATH: Script = Script::from_bytes(b"Zmth");
 
     // https://github.com/harfbuzz/harfbuzz/issues/1162
     pub const MYANMAR_ZAWGYI: Script = Script::from_bytes(b"Qaag");
