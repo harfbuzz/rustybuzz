@@ -1240,7 +1240,7 @@ impl hb_buffer_t {
 
     #[must_use]
     pub fn ensure(&mut self, size: usize) -> bool {
-        if size < self.len {
+        if size <= self.info.len() {
             return true;
         }
 
